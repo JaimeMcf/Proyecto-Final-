@@ -114,6 +114,6 @@ function pagarCarrito() {
         console.log("Error fatal: El archivo EntreFinal1.txt no se encontró.", error);
     });   
 }, 1000); 
-}, 1000);
+ 
 
 
