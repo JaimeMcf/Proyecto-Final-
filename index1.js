@@ -93,7 +93,7 @@ function pagarCarrito() {
 
 
 setTimeout(function() { 
-    fetch("entreFinal1.txt")   
+    fetch("entregaFinal1.txt")   
     .then(response => response.json()) 
     .then(data => { 
         const fraseJson = document.querySelector(".frase_Json"); 
