@@ -17,20 +17,30 @@
     }
 
     function renderizarLibros() {
-        contenedor.innerHTML = "";  
-        libros.forEach(libro => {
-            const card = document.createElement("div");
-            card.className = "card";
-            card.innerHTML = `
-                <img src="${libro.imagen}" alt="${libro.titulo}" style="cursor:pointer">
-                <h3>${libro.titulo}</h3>
-                <p>$${libro.precio}</p>
-                <input type="number" id="cant-${libro.id}" value="1" min="1" style="width: 50px">
-                <button class="agrega" onclick="agregarAlCarrito(${libro.id})">Agregar</button>
-            `;
-            contenedor.appendChild(card);
-        });
-    }
+    contenedor.innerHTML = "";  
+    libros.forEach(libro => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+            <img src="${libro.imagen}" 
+                 alt="${libro.titulo}" 
+                 style="cursor:pointer" 
+                 onclick="mostrarDetalle('${libro.texto}')"> 
+                 
+            <h3>${libro.titulo}</h3>
+            <p>$${libro.precio}</p>
+            <input type="number" id="cant-${libro.id}" value="1" min="1" style="width: 50px">
+            <button class="agrega" onclick="agregarAlCarrito(${libro.id})">Agregar</button>
+        `;
+        contenedor.appendChild(card);
+    });
+}
+
+function mostrarDetalle(texto) {
+    alert("Descripción del libro: " + texto);
+}
+
+
 
     function agregarAlCarrito(id) {
         const libro = libros.find(l => l.id === id);
