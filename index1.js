@@ -101,9 +101,8 @@ function pagarCarrito() {
 
 
 
-
-setTimeout(function() { 
-    fetch("entregaFinal1.txt")   
+ setTimeout(function() { 
+    fetch("EntreFinal1.txt")   
     .then(response => response.json()) 
     .then(data => { 
         const fraseJson = document.querySelector(".frase_Json"); 
@@ -114,6 +113,7 @@ setTimeout(function() {
     .catch(error => { 
         console.log("Error fatal: El archivo EntreFinal1.txt no se encontró.", error);
     });   
+}, 1000); 
 }, 1000);
 
 
