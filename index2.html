@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+   <meta charset="UTF-8">
+  
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+   <meta name="description" content="Aprende a desarrollar páginas web desde cero">
+
+   
+   <title>Contacto</title>
+   
+ 
+ 
+ 
+   <script src="https://kit.fontawesome.com/73f851add2.js" crossorigin="anonymous"></script>
+ 
+
+ <link rel="stylesheet" type="text/css" href="PreEntrega.css"/>	
+
+   <script src="https://kit.fontawesome.com/73f851add2.js" crossorigin="anonymous"></script>  
+
+	<head>
+
+<body>
+
+<h1 id="h1">Comunicate con nosotros</h1>
+<br>
+<p id="p">Tu opinion es importante para seguir creciendo en el mundo de la literatura</p>
+
+
+ <form class="form" action="https://formspree.io/f/mykllwby" method="post">
+ 	
+<label>Coloque el nombre:</label>
+<input id= "input" type="text" name="nombre" required placeholder=""   min="10" max="15">
+<label>Coloque El apellido:</label>
+<input id= "input" type="text" name="apellido" required placeholder=""   min="10" max="15">
+<label>Coloque su Numero de teléfono:</label>
+<input id= "input" type="tel" name=" telefono" required  placeholder=" ">
+<label>Coloque su Email:</label>
+<input id= "input" type="email" name="email" required  placeholder="" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+
+ 
+<label class="linea">Coloque El sexo:</label>
+
+<input id= "input1" type="radio" name="opcion" value="1" required class="input3">
+<label for="input1">Hombre</label> 
+<input id= "input2" type="radio" name="opcion" value="2" required class="input3" >
+<label for="input2">Mujer</label>
+<textarea name="texto" class="textarea">Escriba una opinión</textarea>
+<input id= "input" type="submit" name="boton">
+ </form>
+
+<div></div>
+
+
+
+<footer class="footer">
+<p class="p">© Diego Leandro Couselo - 2026</p>
+   <div class="social">
+      <a class="f" href="#" target="_blank" rel="noopener noreferrer"><i class="fs-4 fab fa-youtube"></i></a>
+      <a class="f" href="#" target="_blank" rel="noopener noreferrer"><i class="fs-4 fab fa-instagram"></i></a>
+      <a  class="f" href="#" target="_blank" rel="noopener noreferrer"><i class="fs-4 fab fa-twitter"></i></a>
+      <a class="f" href="#" target="_blank" rel="noopener noreferrer"><i class="fs-4 fab fa-linkedin"></i></a>
+      <br>
+      <br>
+      <i><a class= "a"href="index.html">Click para regresar a la página principal</a></i>      
+      </div></footer>
+
+
+
+
+ </body>
+
+
+
+	 <style>
+	 	
+ 
+
+body { 
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  background-color: #000;
+
+ }
+
+.a { 
+color: #fff; 
+text-align: center;
+text-decoration: none;
+font-family: monospace;
+font-size: 15px;
+
+
+ }
+
+#h1, #p { 
+color:  rgb(240, 255, 240); 
+text-align:  center;
+border: 2px solid rgb(186, 85, 211); 
+
+
+
+ }
+
+
+
+.f { 
+display: inline-block;
+position: relative;
+left: 120px; 
+
+ }
+
+ .form { 
+
+  display: inline-block;
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  left: 320px;
+ 
+  }
+
+.form input { 
+padding: 5px;
+margin: 10px;
+border-radius: 20px;
+box-shadow: 10px 10px 5px grey; 
+
+} 
+
+.input { 
+top: 15px;
+position: relative;
+
+ }
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+
+.footer {  
+
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #000; 
+margin: 0;
+position: relative;
+top: 500px;  
+width: 100%; 
+color: #000;
+border: 2px solid #fff;
+background: #F0EBEB; 
+height: 30px;
+
+}
+ 
+
+@media (max-width: 768px) { 
+
+
+
+body { 
+background: #000; 
+
+ }
+
+
+.form { 
+background: transparent;
+
+ }
+
+
+.form label, input, textarea { 
+position: relative;
+left: -300px;
+color: #fff; 
+
+
+ }
+
+#input { 
+color: #000;
+
+ }
+
+
+
+
+	 </style>
+ 
+ <script type="text/javascript">
+ 	
+ 	
+if(navigator.geolocation) { 
+
+navigator.geolocation.getCurrentPosition( (posicion)=> { 
+
+const latitude = posicion.coords.latitude;
+const longitude = posicion.coords.longitude 
+
+console.log(`la ubicación es: Latitud: ${latitud}, Longitud: ${longitud}`)
+
+} 
+
+(error) => { 
+
+console.log("Hubo un error al obtener ubicación", error.message)
+
+}
+
+) 
+
+
+
+else { 
+
+console.log("Error para obtener ubicación")
+}
+
+
+ 
+
+
+
+
+ </script>
+ 	

@@ -1,0 +1,373 @@
+ 
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de libros de Diego Leandro Couselo </title>
+     <script src="https://kit.fontawesome.com/73f851add2.js" crossorigin="anonymous"></script>
+  
+   <link rel="stylesheet" type="text/css" href="index1.css"/>   
+   
+</head>
+
+
+
+
+<body>
+
+    <h1>Estimado lector, seleccione el libro</h1>
+      <h1 class="h1">Estimado lector, seleccione el libro que más le guste</h1>
+    <h2 class="h2">Podrás leer una amplia gama de libros de terror, misterio, sobrenatural, surreal, aventura, paranormal, con tintes de humor y romance</h2>
+
+    <p class="p1">No hay nada más bello que imaginar una aventura de la que seas parte</p>  
+
+
+
+
+    <div id="libros"></div>
+
+    <div class="sinopsis" id="sinopsis">Selecciona un libro para ver su descripción</div>
+
+    <div class="seccion-carrito">
+        <h2>Tu carrito</h2>
+        <div id="carrito"></div>
+<button id="btn-pagar" onclick="pagarCarrito()">Pagar Carrito</button>
+
+    </div>
+
+    <div class="frase_Json" id="frase"></div>
+
+   <footer class="footer">
+        <p class="p">© Diego Leandro Couselo - 2026</p>
+        <div class="social">
+            <a class="f" href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+            <a class="f" href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a class="f" href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            <a class="f" href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <br>
+            <br>
+            <i><a class="a" href="index.html">Click para regresar a la página principal</a></i>     
+        </div>
+</footer>
+
+<script src="index1.js"></script>
+
+</body>
+</html>
+
+<!--  <style>
+      
+
+
+        body { background-color: #000; 
+               color: #fff; font-family: sans-serif; 
+               margin: 0; padding: 20px; }
+        
+        h1, h2 { text-align: center; 
+                 font-family: 'Arial', sans-serif; }
+        
+        #libros { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+            gap: 30px; 
+            max-width: 1200px; 
+            margin: 20px auto; 
+        }
+        
+        .card { border: 1px solid #444; 
+                padding: 15px; 
+                text-align: center; 
+                border-radius: 10px; }
+        
+        .card img { width: 100%; 
+                    height: 200px; 
+                    object-fit: cover; 
+                    border-radius: 10px; }
+        
+        .sinopsis { background: #fff; 
+                    color: #000; 
+                    padding: 20px; 
+                    margin: 20px auto;
+                     max-width: 800px; 
+                     border-radius: 10px; }
+        
+        .seccion-carrito { 
+            margin-top: 40px; 
+            text-align: center; }
+ 
+.frase_Json { 
+    color: #fff; 
+    padding: 20px; 
+    text-align: center;
+    font-style: italic;
+}
+
+    
+.footer {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #F0EBEB; 
+    color: #000;
+    border: 5px solid #fff;
+    padding: 10px 
+    width: 100%; 
+    height: 100%; 
+    position: relative;
+    margin-top: 50px;
+}
+
+.agrega:hover {
+    background-color: #ff0000;
+}
+
+
+.agrega {
+    background-color: #8a0000;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+
+.card img  {
+    width: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.card img:hover { 
+    transform: scale(1.05); 
+    border-radius: 15px; 
+}
+
+
+@keyframes aparecer { 
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aparece { 
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+
+.sinopsis { 
+    background: #fff; 
+    color: #000; 
+    padding: 20px; 
+    margin: 20px auto;
+    max-width: 800px; 
+    border-radius: 10px; 
+    min-height: 50px;  
+}
+
+    </style> -->
+
+
+
+
+
+
+
+
+
+    <script>
+ //        const libros = [
+             
+ // {  
+ //        id: 1,  
+ //        titulo: "Relatos de terror y misterio",  
+ //        precio: 15000,
+ //        imagen: "todo/1.jpg",  
+ //        texto: "Un ser extraño desde su Ataúd narrará las historias de terror y misterio que solo muy pocos se atreven a leer. En sus manos un libro que fuera llevado consigo contiene cada uno de los relatos macabros y escalofriantes que serán dichos antes de que aquel cuentista cierre sus ojos, mientras el aire de un pequeño espacio se agota, y la voz de sus palabras se desvanece."   
+ //    },
+ //    {  
+ //        id: 2,  
+ //        titulo: "El secreto de jaime McFill - El interno 515",
+ //        precio: 15000,
+ //        imagen: "todo/2.jpg",  
+ //        texto: "Jaime McFill, no recuerda nada de su pasado de niñez cuando un hecho extraño le ocurrió al descender al sótano de la casa de su abuela. Allí vio algo que no debía ver y todo terminó en un accidente. En adelante vive una vida normal por así decirlo hasta que comienzan a ocurrir una serie de asesinatos, y él se siente implicado en ello, sobre todo con las apariciones de una mujer a titulo de fantasma que le solicita que debe ir con ella a un lugar llamado el hospicio." 
+ //    }, 
+ //    {  
+ //        id: 3,
+ //        titulo: "El coleccionista",
+ //        precio: 15000, 
+ //        imagen: "todo/3.jpg",  
+ //        texto: "William Parker, un anticuario como cualquiera que lleva una vida simple ¿O no? A raíz de una terrible maldición en un bosque cerca de la localidad de Rivadavia, Buenos Aires, Argentina, su vida cambió para siempre. Sufre de dendrofobia, y pareidolia diaria, pero algo más. Desde aquella maldición es que vive entre dos mundos. El que todos conocemos y solemos llevar a diario, y el que solo suelen ir aquellos que tienen un don especial; una llave a lo maldito. William, es un ciudadano más que pasa su tiempo recibiendo objetos prohibidos del otro mundo, yendo a lugares fantásticos e inverosímiles, y resolviendo misterios en la ciudad de Buenos Aires repleta de fantasmas y monstruos que van y vienen. En su camino se encontrará a una bella y alegre dama, Rebi Rumiko, una bióloga y artista, que guarda una obsesión con el señor Parker y su vida, al punto tal que está dispuesta a matarlo con tal de que sea de su posesión. Y ambos deben resolver todos los problemas que se suscitan a lo largo de la historia, con la maldición especial que tiene William, el muñeco maldito de la vieja."
+ //    }, 
+ //    {  
+ //        id: 4,  
+ //        titulo: "Oco, Além",
+ //        precio: 15000, 
+ //        imagen: "todo/4.jpg",  
+ //        texto: "El día que Lucius Gunnes, fue a encontrarse con un cliente en el barrio de Versalles, Belle abordó un ómnibus para ir a trabajar, sin saber que aquel vehículo iba a un lugar diferente y misterioso. Los pasajeros la increpan para que descienda ¡Éste vehículo se dirige a otro sitio!, fue la advertencia. Ella descendió de aquel, y restó importancia a ello. Prosiguió su día como siempre, hasta que la noticia de que su marido había desaparecido se hizo presente delante de sus ojos. De ahora en adelante Belle, se encuentra en una búsqueda implacable y sus únicas pistas, son un niño que estaba en el lugar del hecho, y que argumenta que el paisaje se lo llevó, y un nombre particular de un lugar extraño de las leyendas. Y dentro de la anormalidad, Belle como científica descubre que guarda en su interior un poder extraño; la fuente de una fuerza que la convierte en una bestia asesina, poder como el que guarda Lucius, su esposo, William y Rebi amigos que se suman a la travesía. Con ello se despertarán situaciones y hechos increíbles, de terror y aventura, humor, y drama, en el universo paralelo al que llaman Oco, Além." 
+ //    }, 
+ //    {  
+ //        id: 5,  
+ //        titulo: "Experimento muerte",
+ //        precio: 15000,
+ //        imagen: "todo/5.jpg",  
+ //        texto: "Octavio Couspide, ha sufrido un accidente y producto de una enfermedad, es internado en un hospicio, allí ve a una mujer extraña con una venda en su ojo. Luego de un tiempo se recupera y vuelve a la escuela, y resulta que aquella mujer es su compañera de clase, Mei Inosanto. Una tímida muchacha acosada y maltratada por sus compañeros y compañeras. Tanto Octavio como Mei tienen un problema. Él escucha voces, y ella ve con su ojo falso, lo que no se debe oír y ver. Pronto de forma continuada comienzan a suceder situaciones extrañas. Asesinatos y actos de extrema violencia; leyendas y maldiciones. Experimentos, y cuerpos vivientes que regresan de la muerte, y en su investigación, el único sospechoso de todo esto, es la mismísima parca."  
+ //    }, 
+ //    {
+ //        id: 6,
+ //        titulo: "Los siameses Berthol",
+ //        precio: 15000, 
+ //        imagen: "todo/7.jpg", 
+ //        texto: "Un asesinato múltiple, y una leyenda, llevaran a determinadas personas a viajar a un pueblo siniestro. El pueblo de Baba, siguiendo los lineamientos de una narración macabra sobre una familia y la venganza de unas criaturas inhumanas que imponen el terror y la muerte a las que llaman los siameses Berthol."   
+ //    }, 
+ //    {  
+ //        id: 7,  
+ //        titulo: "Noir, el saqueador, y el reloj de Léviatan",
+ //        precio: 15000, 
+ //        imagen: "todo/8.png", 
+ //        texto: "Mikonos Noir, conocido en la galaxia como el looter, el saqueador, es contratado para una misión Juntos a otros saqueadores. Llegar a la ciudad perdida de MU, y encontrar un artefacto con el nombre de reloj de Léviatan, cuyo poder puede retroceder el tiempo e incluso modificarlo de manera aleatoria. Entre los saqueadores se encontrará por primera vez con quien compartirá su vida la saqueadora Caciope Cih. Y evitar de ser posible que el tiempo regrese y todo sea modificado."  
+ //    }, 
+ //    {  
+ //        id: 8,  
+ //        titulo: "Mi insólito matrimonio es un disparate del universo como sospechaba",
+ //        precio: 15000, 
+ //        imagen: "todo/13.jpg", 
+ //        texto: "Júpiter Anónimo Ruppert, es un tipo común y corriente; antisocial, e inteligente. Un día caminando de la universidad a su casa, se cruza con una mujer extraña y se enamora a primera vista. Le pide una cita, y ante un descuido de ella, la salva de un accidente. La dama acepta esa cita, pero a cambio debe casarse con ella, y él sin dudarlo acepta. Allí comienza ésta aventura desopilante, y todas las situaciones extrañas, e insólitas, cómicas que él, y todos los personajes que se relacionan con aquel matrimonio viven. ¿Gaia? ¿Quién, o qué es Gaia? ¿De dónde viene, y por qué?" 
+ //    }, 
+ //    {  
+ //        id: 9,  
+ //        titulo: "La grieta",
+ //        precio: 15000,  
+ //        imagen: "todo/10.jpg",  
+ //        texto:"Lucius Gunnes, se encuentra en el inframundo por encargo de un trabajo, y mientras sucede ello, su mujer Belle Inosanto, se dirige a la estación de Ómnibus a recibir a la llegada de su hermana Mei, y Octavio su compañero. Todo parece normal, y no lo és. Un aguacero se produce en la Ciudad de Buenos Aires y una terrible bruma aparece dejando en blanco todo el paisaje. y a medida que se va clarificando ocurre un hecho extraño. El paisaje que ellos pueden ver no es el mismo, sino algo peor. Un apocalipsis de toda la ciudad, y el mundo mismo, y varias puertas en forma de quebraduras se forman llevando a otros sitios más insólitos, y allí comienza la aventura de seis personas perdidas en ese mundo extraordinario que no sabemos si es el mismo planeta tierra u otro y detener a un antagonista sumamente peligroso al que nombrar el fin del todo."  
+ //    }, 
+ //    {
+ //        id: 12,  
+ //        titulo: "¡Por fin tengo novia!", 
+ //        precio: 15000,  
+ //        imagen: "todo/14.jpg", 
+ //        texto:"El Señor. Crow, edad, tantos años. Ya no espera mucho de la vida aburrida que lleva, y mientras tanto se encierra a escribir en su mono-ambiente, pero un giro inesperado lo lleva a tener una cita de trabajo con la gerente de una empresa, la señora Cristal, y allí comienza la aventura, cuando luego de la cita, él la descubre en un callejón asesinando y devorando a tres personas. Al verla se asusta. La bella que conoció era un monstruo, o mejor dicho un zombi ¿Tienes dos opciones?¿O sales conmigo, o formas parte del menú? A partir de allí, nace una pareja dispareja entre una muerta y un casi vivo, y entre ello una niebla espesa cubre el paisaje, y hechos y desapariciones se producen, con bucles que se abren y cierran, mientras, Él se pregunta ¿Quién es ella, y qué ocurre en la ciudad ?"  
+ //    }
+
+
+ //           ]; 
+ 
+
+
+//     let libros = [];  
+//     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+//     const contenedor = document.getElementById("libros");
+//     const carritoDiv = document.getElementById("carrito");
+
+    
+//     async function cargarLibros() {
+//         try {
+//             const respuesta = await fetch('libros.json');
+//             libros = await respuesta.json();
+//             renderizarLibros();  
+//         } catch (error) {
+//             console.error("Error al cargar los libros:", error);
+//         }
+//     }
+
+//     function renderizarLibros() {
+//         contenedor.innerHTML = "";  
+//         libros.forEach(libro => {
+//             const card = document.createElement("div");
+//             card.className = "card";
+//             card.innerHTML = `
+//                 <img src="${libro.imagen}" alt="${libro.titulo}" style="cursor:pointer">
+//                 <h3>${libro.titulo}</h3>
+//                 <p>$${libro.precio}</p>
+//                 <input type="number" id="cant-${libro.id}" value="1" min="1" style="width: 50px">
+//                 <button class="agrega" onclick="agregarAlCarrito(${libro.id})">Agregar</button>
+//             `;
+//             contenedor.appendChild(card);
+//         });
+//     }
+
+//     function agregarAlCarrito(id) {
+//         const libro = libros.find(l => l.id === id);
+//         const cantidad = parseInt(document.getElementById(`cant-${id}`).value);
+        
+      
+//         const indice = carrito.findIndex(item => item.id === id);
+//         if (indice !== -1) {
+//             carrito[indice].cantidad += cantidad;
+//         } else {
+//             carrito.push({ ...libro, cantidad });
+//         }
+        
+//         localStorage.setItem("carrito", JSON.stringify(carrito));
+//         actualizarCarrito();
+//     }
+
+//     function actualizarCarrito() {
+//         carritoDiv.innerHTML = carrito.map((item, index) => `
+//             <p>${item.titulo} - Cant: ${item.cantidad} - Total: $${item.precio * item.cantidad}
+//                <button onclick="eliminarDelCarrito(${index})">X</button>
+//             </p>
+//         `).join('');
+//     }
+
+//     function eliminarDelCarrito(index) {
+//         carrito.splice(index, 1);
+//         localStorage.setItem("carrito", JSON.stringify(carrito));
+//         actualizarCarrito();
+//     }
+
+    
+//     cargarLibros();
+//     actualizarCarrito();
+
+
+// function pagarCarrito() {
+//     if (carrito.length === 0) {
+//         alert("El carrito está vacío, agrega algo primero.");
+//         return;
+//     }
+
+//     let total = 0;
+//     for (let item of carrito) {
+//         total += (item.precio * item.cantidad);
+//     }
+
+//     alert("¡Compra realizada con éxito! Total a pagar: $" + total);
+
+    
+//     carrito = [];
+//     localStorage.removeItem("carrito");
+//     actualizarCarrito();
+// }
+
+
+
+
+
+
+
+// setTimeout(function() { 
+//     fetch("EntreFinal1.txt")   
+//     .then(response => response.json()) 
+//     .then(data => { 
+//         const fraseJson = document.querySelector(".frase_Json"); 
+//         fraseJson.innerHTML = `<p>"${data.texto}"</p>`; 
+//         fraseJson.style.animation = "aparece 2s forwards"; 
+//         fraseJson.style.fontSize = "22px";  
+//     })  
+//     .catch(error => { 
+//         console.log("Error fatal: El archivo EntreFinal1.txt no se encontró.", error);
+//     });   
+// }, 1000);
+
+
+
+
+</script>
+</body>
